@@ -90,19 +90,20 @@ export default function ProductsUpdated() {
     <section className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Products Section */}
-        <div className="mb-32">
+        <article className="mb-32">
           <RevealOnScroll>
-            <div className="text-center mb-16">
+            <header className="text-center mb-16">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">
                 Our Products
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">
                 Enterprise Software Solutions
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Powerful, scalable software products designed to transform your business operations
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Powerful, scalable software products designed to transform your business operations.
+                Trusted by 500+ organizations worldwide for their digital transformation journey.
               </p>
-            </div>
+            </header>
           </RevealOnScroll>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
@@ -128,14 +129,29 @@ export default function ProductsUpdated() {
                       </div>
 
                       {/* Product Name */}
-                      <h3 className="text-2xl font-bold text-secondary mb-3">
+                      <h3 className="text-2xl font-bold text-secondary mb-4">
                         {product.name}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-gray-600 mb-6 leading-relaxed flex-1">
+                      <p className="text-gray-600 mb-6 leading-relaxed flex-1 text-base">
                         {product.description}
                       </p>
+
+                      {/* Quick Stats/Benefits */}
+                      <div className="bg-gray-50 rounded-lg p-4 mb-6">
+                        <h4 className="text-sm font-bold text-secondary mb-2 uppercase tracking-wide">Key Capabilities:</h4>
+                        <ul className="space-y-1 text-sm text-gray-700">
+                          {product.features.slice(0, 2).map((feature, idx) => (
+                            <li key={idx} className="flex items-center gap-2">
+                              <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M5 13l4 4L19 7"></path>
+                              </svg>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
                       {/* Features */}
                       <div className="flex flex-wrap gap-2 mb-6">
@@ -174,22 +190,23 @@ export default function ProductsUpdated() {
               );
             })}
           </div>
-        </div>
+        </article>
 
         {/* Services Section */}
-        <div>
+        <article>
           <RevealOnScroll>
-            <div className="text-center mb-16">
+            <header className="text-center mb-16">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">
                 Our Services
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">
                 Comprehensive IT Consulting Services
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Expert services to accelerate your digital transformation journey
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Expert services to accelerate your digital transformation journey.
+                We combine industry best practices with innovative solutions tailored to your business needs.
               </p>
-            </div>
+            </header>
           </RevealOnScroll>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
@@ -207,7 +224,7 @@ export default function ProductsUpdated() {
                     <h3 className="text-xl font-bold text-secondary mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed text-base">
                       {service.description}
                     </p>
                   </motion.div>
@@ -215,7 +232,7 @@ export default function ProductsUpdated() {
               );
             })}
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );

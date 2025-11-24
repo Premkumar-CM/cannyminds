@@ -74,27 +74,53 @@ export default function AboutUpdated() {
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <article className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Main About Section */}
         <RevealOnScroll>
-          <div className="max-w-4xl mx-auto text-center mb-20">
+          <header className="max-w-5xl mx-auto text-center mb-20">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               About CannyMinds
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-8">
               Your Trusted Technology Partner
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              CannyMinds Technology Solutions is a global leader in digital transformation,
-              helping organizations innovate, digitalize, and transform their operations with
-              cutting-edge IT solutions.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              With offices across <strong>India, USA, Nigeria, and UAE</strong>, we deliver
-              world-class services to clients worldwide, combining local expertise with
-              global best practices.
-            </p>
-          </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-lg mb-8">
+              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6 font-medium">
+                CannyMinds Technology Solutions is a <strong className="text-secondary">global leader in digital transformation</strong>,
+                helping organizations innovate, digitalize, and transform their operations with
+                cutting-edge IT solutions.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div className="bg-white rounded-lg p-6 border border-gray-100">
+                  <h3 className="text-lg font-bold text-secondary mb-3 flex items-center gap-2">
+                    <svg className="w-6 h-6 text-primary" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                    </svg>
+                    Global Reach
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    With offices across <strong>India, USA, Nigeria, and UAE</strong>, we deliver
+                    world-class services combining local expertise with global best practices.
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg p-6 border border-gray-100">
+                  <h3 className="text-lg font-bold text-secondary mb-3 flex items-center gap-2">
+                    <svg className="w-6 h-6 text-primary" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Proven Track Record
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    <strong>20+ years of experience</strong> delivering enterprise solutions to
+                    <strong> 500+ satisfied clients</strong> across 50+ countries worldwide.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </header>
         </RevealOnScroll>
 
         {/* E-E-A-T Pillars - Standardized Cards */}
@@ -207,7 +233,7 @@ export default function AboutUpdated() {
             </div>
           </div>
         </RevealOnScroll>
-      </div>
+      </article>
     </section>
   );
 }
