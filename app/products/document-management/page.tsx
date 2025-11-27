@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Christopher" }],
   openGraph: {
     title: "CannyDocs - Enterprise Document Management Software",
-    description: "Powerful DMS with OCR, workflow automation, and enterprise security. Trusted by 500+ companies worldwide.",
+    description: "Powerful DMS with OCR, workflow automation, and enterprise security. Trusted by growing businesses worldwide.",
     type: "article",
     authors: ["Christopher"],
   },
@@ -80,7 +80,7 @@ const jsonLd = {
       "author": {
         "@type": "Person",
         "name": "Christopher",
-        "jobTitle": "Enterprise Solutions Consultant",
+        "jobTitle": "Head of Technical Department & Investor",
         "url": "https://cannymindstech.com/about"
       },
       "publisher": {
@@ -107,8 +107,8 @@ const jsonLd = {
       "operatingSystem": "Web, Windows, macOS, Linux",
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "500"
+        "ratingValue": "4.9",
+        "ratingCount": "10"
       }
     },
     {
@@ -173,7 +173,7 @@ export default function CannyDocsProductPage() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                   <StarIcon sx={{ fontSize: 18 }} />
-                  Trusted by 500+ Companies Worldwide
+                  Trusted by Growing Businesses Worldwide
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
@@ -227,8 +227,8 @@ export default function CannyDocsProductPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-4 gap-8 text-center text-white">
               {[
-                { number: "500+", label: "Companies Trust Us" },
-                { number: "50,000+", label: "Documents Managed" },
+                { number: "10+", label: "Happy Clients" },
+                { number: "100K+", label: "Documents Managed" },
                 { number: "80%", label: "OCR Accuracy" },
                 { number: "99.9%", label: "Uptime Guarantee" },
               ].map((stat, idx) => (
@@ -551,7 +551,7 @@ export default function CannyDocsProductPage() {
                 Ready to Save 60% on Document Processing Costs?
               </h3>
               <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-                Join 500+ organizations that have transformed their document workflows with CannyDocs. Start your free 30-day trial today.
+                Join growing organizations that have transformed their document workflows with CannyDocs. Start your free 30-day trial today.
               </p>
               <Link
                 href="#get-started"
@@ -1005,8 +1005,8 @@ export default function CannyDocsProductPage() {
               <div className="inline-flex items-center gap-3 bg-green-50 border-2 border-green-200 px-6 py-4 rounded-xl">
                 <StarIcon sx={{ fontSize: 28, color: '#FFD700' }} />
                 <div className="text-left">
-                  <div className="text-2xl font-bold text-secondary">4.8/5.0</div>
-                  <div className="text-sm text-gray-600">Based on 500+ verified reviews</div>
+                  <div className="text-2xl font-bold text-secondary">4.9/5.0</div>
+                  <div className="text-sm text-gray-600">Based on client feedback</div>
                 </div>
               </div>
             </div>
@@ -1178,10 +1178,10 @@ export default function CannyDocsProductPage() {
                   <div className="mb-4">
                     <h3 className="text-2xl font-bold text-secondary mb-2">About the Author</h3>
                     <p className="text-lg font-semibold text-primary mb-1">Christopher</p>
-                    <p className="text-sm text-gray-600">Enterprise Solutions Consultant | CannyMinds Technology Solutions</p>
+                    <p className="text-sm text-gray-600">Head of Technical Department & Investor | CannyMinds Technology Solutions</p>
                   </div>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Christopher is an Enterprise Solutions Consultant at CannyMinds Technology Solutions with over 10 years of experience in document management systems and digital transformation. He has successfully implemented CannyDocs for 100+ organizations across healthcare, legal, finance, and manufacturing sectors, helping them achieve paperless operations and improve compliance.
+                    Christopher is the Head of Technical Department and Investor at CannyMinds Technology Solutions with over 10 years of experience in enterprise software development and document management systems. He leads the technical vision and development of CannyDocs and oversees all product innovation, ensuring cutting-edge solutions that help businesses achieve digital transformation and operational efficiency.
                   </p>
                   <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                     <div className="flex items-center gap-2">
@@ -1190,7 +1190,7 @@ export default function CannyDocsProductPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckIcon sx={{ fontSize: 16, color: '#25d366' }} />
-                      <span>100+ implementations</span>
+                      <span>Technical Leadership</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckIcon sx={{ fontSize: 16, color: '#25d366' }} />
@@ -1335,7 +1335,7 @@ export default function CannyDocsProductPage() {
               Ready to Transform Your Document Management?
             </h2>
             <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto">
-              Join 500+ companies using CannyDocs to digitize and automate document workflows. Start your 30-day free trial today—no credit card required.
+              Join growing businesses using CannyDocs to digitize and automate document workflows. Start your 30-day free trial today—no credit card required.
             </p>
 
 

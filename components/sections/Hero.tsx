@@ -101,49 +101,22 @@ export default function Hero() {
           {/* Main Heading - SEO Optimized H1 */}
           <RevealOnScroll delay={0.4}>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="block text-secondary">
-                CannyMinds Technology Solutions
-              </span>
-              <span className="block bg-gradient-to-r from-secondary via-primary to-primary bg-clip-text text-transparent mt-2 text-4xl md:text-5xl lg:text-6xl">
+              <span className="block bg-gradient-to-r from-secondary via-primary to-primary bg-clip-text text-transparent">
                 Digital Transformation & AI Solutions
+              </span>
+              <span className="block text-secondary mt-2 text-4xl md:text-5xl">
+                CannyMinds Technology Solutions
               </span>
             </h1>
           </RevealOnScroll>
 
-          {/* Description - Enhanced with keywords and better formatting */}
+          {/* Description - Enhanced with keywords */}
           <RevealOnScroll delay={0.6}>
-            <div className="max-w-4xl mx-auto mb-12">
-              <p className="text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed font-medium">
-                Leading IT solutions provider with <strong className="text-secondary">20+ years of experience</strong> delivering
-                enterprise-grade technology solutions worldwide.
-              </p>
-              <div className="grid md:grid-cols-2 gap-4 text-lg text-gray-600">
-                <div className="flex items-start gap-2">
-                  <svg className="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Digital Transformation & AI Automation</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Enterprise Software Development</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>ISO 27001 Certified Security</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <svg className="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>500+ Global Clients Served</span>
-                </div>
-              </div>
-            </div>
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Leading IT solutions provider with 20+ years of experience in digital transformation,
+              AI automation, enterprise software development, and business process services.
+              ISO 27001 certified, serving 500+ clients across India, USA, Nigeria, and UAE.
+            </p>
           </RevealOnScroll>
 
           {/* CTA Buttons */}

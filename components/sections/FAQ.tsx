@@ -4,13 +4,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import RevealOnScroll from "../ui/RevealOnScroll";
 
-// FAQ Schema for SEO
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [] as any[]
-};
-
 const faqs = [
   {
     question: "What services does CannyMinds offer?",
@@ -54,16 +47,6 @@ const faqs = [
   },
 ];
 
-// Populate FAQ schema
-faqSchema.mainEntity = faqs.map(faq => ({
-  "@type": "Question",
-  "name": faq.question,
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": faq.answer
-  }
-}));
-
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -73,26 +56,19 @@ export default function FAQ() {
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-gray-50">
-      {/* JSON-LD FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
-      <article className="container mx-auto px-6 lg:px-12">
+      <div className="container mx-auto px-6 lg:px-12">
         <RevealOnScroll>
-          <header className="text-center mb-16">
+          <div className="text-center mb-16">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               FAQ
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Find answers to common questions about our IT solutions, services, and company.
-              Can't find what you're looking for? <a href="#contact" className="text-primary font-semibold hover:underline">Contact us</a> directly.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Find answers to common questions about our IT solutions and services
             </p>
-          </header>
+          </div>
         </RevealOnScroll>
 
         <div className="max-w-4xl mx-auto">
@@ -176,7 +152,7 @@ export default function FAQ() {
             </div>
           </div>
         </RevealOnScroll>
-      </article>
+      </div>
     </section>
   );
 }

@@ -12,11 +12,11 @@ export const enhancedSiteConfig = {
 
   // Primary description optimized for featured snippets
   description:
-    "CannyMinds is a globally recognized IT solutions provider with 20+ years of experience in digital transformation, AI automation, and enterprise software development. ISO 27001 & ISO 9001:2015 certified. Serving 500+ clients across India, USA, Nigeria, and UAE.",
+    "CannyMinds is a trusted IT solutions provider specializing in digital transformation, AI automation, and enterprise software development. ISO 27001 & ISO 9001:2015 certified. Serving clients across India, USA, Nigeria, and UAE with proven expertise.",
 
   // Extended description for better keyword coverage
   longDescription:
-    "Transform your business with CannyMinds Technology Solutions - your trusted partner for digital transformation, AI-powered automation, custom software development, and enterprise IT services. With ISO 27001 and ISO 9001:2015 certifications, we deliver world-class solutions including CannyDocs (document management), CannyHR (HR & payroll), CannyScan (digitization), and CannyTrack (productivity monitoring). Established in 2003, serving 500+ global clients with 24/7 support.",
+    "Transform your business with CannyMinds Technology Solutions - your trusted partner for digital transformation, AI-powered automation, custom software development, and enterprise IT services. With ISO 27001 and ISO 9001:2015 certifications, we deliver world-class solutions including CannyDocs (document management), CannyHR (HR & payroll), CannyScan (digitization), and CannyTrack (productivity monitoring). Serving global clients with 24/7 support and industry-leading expertise.",
 
   url: "https://www.cannymindstech.com",
   ogImage: "https://www.cannymindstech.com/og-image.jpg",
@@ -77,12 +77,12 @@ export const enhancedSiteConfig = {
   // Business information for local SEO
   business: {
     founded: "2003",
-    employees: "100+",
-    clients: "500+",
-    countries: "50+",
+    employees: "50+",
+    clients: "10+",
+    countries: "4",
     offices: 4,
-    rating: 4.8,
-    reviews: 500,
+    rating: 4.9,
+    reviews: 10,
   },
 
   // Social media profiles

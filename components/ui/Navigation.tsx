@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { KeyboardArrowDown } from "@mui/icons-material";
 
 export default function Navigation() {
@@ -37,9 +38,9 @@ export default function Navigation() {
     { name: "Home", href: "/" },
     { name: "Products", href: "/#products", hasDropdown: true },
     { name: "Services", href: "/#services" },
-    { name: "About", href: "/#about" },
+    { name: "About", href: "/about" },
     { name: "Offices", href: "/#offices" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -49,20 +50,26 @@ export default function Navigation() {
         isScrolled ? "shadow-lg backdrop-blur-md bg-white/95" : "bg-white/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" className="flex-shrink-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-3 group cursor-pointer"
+              className="flex items-center gap-2 sm:gap-3 group cursor-pointer"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-xl">C</span>
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-105 transition-transform">
+                <Image
+                  src="/logo.png"
+                  alt="CannyMinds Technology Solutions Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <div>
-                <div className="text-xl font-bold text-secondary leading-none">
+              <div className="hidden sm:block">
+                <div className="text-lg sm:text-xl font-bold text-secondary leading-none">
                   CannyMinds
                 </div>
                 <div className="text-xs text-gray-600">Technology Solutions</div>
@@ -71,7 +78,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link, index) => (
               link.hasDropdown ? (
                 <div
@@ -85,7 +92,7 @@ export default function Navigation() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="text-gray-700 hover:text-primary font-medium transition-colors relative group flex items-center gap-1"
+                    className="text-sm xl:text-base text-gray-700 hover:text-primary font-medium transition-colors relative group flex items-center gap-1 whitespace-nowrap"
                   >
                     {link.name}
                     <KeyboardArrowDown
@@ -101,7 +108,7 @@ export default function Navigation() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                      className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
                     >
                       {productLinks.map((product) => (
                         <Link
@@ -122,7 +129,7 @@ export default function Navigation() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-gray-700 hover:text-primary font-medium transition-colors relative group"
+                  className="text-sm xl:text-base text-gray-700 hover:text-primary font-medium transition-colors relative group whitespace-nowrap"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
@@ -131,14 +138,14 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - Desktop */}
           <motion.a
-            href="#contact"
+            href="/contact"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden lg:block px-6 py-2.5 bg-primary text-white font-semibold rounded-lg shadow-lg shadow-primary/30 transition-all duration-300"
+            className="hidden lg:block px-4 xl:px-6 py-2.5 bg-primary text-white font-semibold rounded-lg shadow-lg shadow-primary/30 transition-all duration-300 text-sm xl:text-base whitespace-nowrap"
           >
             Get Started
           </motion.a>
@@ -146,15 +153,15 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-700"
+            className="lg:hidden p-2 text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6"
+              className="w-7 h-7"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth="2"
+              strokeWidth="2.5"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
@@ -173,35 +180,42 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden pb-6"
+            className="lg:hidden pb-6 pt-4 border-t border-gray-200"
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 link.hasDropdown ? (
-                  <div key={link.name}>
+                  <div key={link.name} className="border-b border-gray-100 pb-2">
                     <button
                       onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-                      className="text-gray-700 hover:text-primary font-medium py-2 transition-colors flex items-center gap-1 w-full"
+                      className="text-gray-700 hover:text-primary hover:bg-gray-50 font-medium py-3 px-4 transition-colors flex items-center justify-between w-full rounded-lg"
                     >
-                      {link.name}
+                      <span>{link.name}</span>
                       <KeyboardArrowDown
                         sx={{ fontSize: 20 }}
                         className={`transition-transform ${productsDropdownOpen ? 'rotate-180' : ''}`}
                       />
                     </button>
                     {productsDropdownOpen && (
-                      <div className="ml-4 mt-2 flex flex-col gap-2">
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        className="ml-4 mt-2 flex flex-col gap-1 bg-gray-50 rounded-lg p-2"
+                      >
                         {productLinks.map((product) => (
                           <Link
                             key={product.name}
                             href={product.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="text-gray-600 hover:text-primary text-sm py-2 transition-colors"
+                            onClick={() => {
+                              setIsMobileMenuOpen(false);
+                              setProductsDropdownOpen(false);
+                            }}
+                            className="text-gray-600 hover:text-primary hover:bg-white text-sm py-2 px-3 transition-colors rounded-md"
                           >
                             {product.name}
                           </Link>
                         ))}
-                      </div>
+                      </motion.div>
                     )}
                   </div>
                 ) : (
@@ -209,16 +223,16 @@ export default function Navigation() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
+                    className="text-gray-700 hover:text-primary hover:bg-gray-50 font-medium py-3 px-4 transition-colors rounded-lg"
                   >
                     {link.name}
                   </a>
                 )
               ))}
               <a
-                href="/#contact"
+                href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-6 py-2.5 bg-primary text-white font-semibold rounded-lg text-center shadow-lg shadow-primary/30"
+                className="mt-4 px-6 py-3 bg-primary text-white font-semibold rounded-lg text-center shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors"
               >
                 Get Started
               </a>

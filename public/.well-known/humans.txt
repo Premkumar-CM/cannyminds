@@ -1,0 +1,22 @@
+/* TEAM */
+  Developer & SEO: CannyMinds Technology Solutions
+  Site: https://cannymindstech.com
+  Location: Chennai, India
+
+/* THANKS */
+  Next.js Framework
+  Tailwind CSS
+  Material UI Icons
+
+/* SITE */
+  Last update: 2025/01/27
+  Standards: HTML5, CSS3, ES2024
+  Components: React, TypeScript
+  Software: Next.js 15, Tailwind CSS
+  SEO: Optimized for Google 2025
+
+/* PRODUCTS */
+  CannyDocs - Document Management System
+  CannyScan - Professional Document Scanning
+  CannyHR - HR & Payroll Management
+  CannyTrack - Productivity Monitoring

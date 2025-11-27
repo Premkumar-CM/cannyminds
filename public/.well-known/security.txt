@@ -1,0 +1,7 @@
+Contact: mailto:security@cannymindstech.com
+Contact: https://www.cannymindstech.com/contact
+Preferred-Languages: en
+Canonical: https://www.cannymindstech.com/.well-known/security.txt
+Expires: 2026-12-31T23:59:59.000Z
+Acknowledgments: https://www.cannymindstech.com/security/acknowledgments
+Policy: https://www.cannymindstech.com/security/policy
