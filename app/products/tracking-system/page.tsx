@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/ui/Footer";
+import SocialShare from "@/components/ui/SocialShare";
 import {
   CheckCircle as CheckIcon,
   Star as StarIcon,
@@ -198,6 +199,15 @@ export default function CannyTrackProductPage() {
                     See Features
                     <VisibilityIcon sx={{ fontSize: 20 }} />
                   </Link>
+                </div>
+
+                {/* Social Share */}
+                <div className="flex items-center gap-4 mb-6">
+                  <SocialShare
+                    title="CannyTrack - Productivity & Workforce Monitoring"
+                    description="Transparent productivity monitoring with activity tracking, screenshots, and data loss prevention for remote teams. Consent-based, real-time analytics with offline support."
+                  />
+                  <span className="text-sm text-gray-600">Share this product</span>
                 </div>
 
                 <div className="flex items-center gap-6 text-sm text-gray-600 flex-wrap">

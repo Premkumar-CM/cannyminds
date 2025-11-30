@@ -12,11 +12,11 @@ export const enhancedSiteConfig = {
 
   // Primary description optimized for featured snippets
   description:
-    "CannyMinds is a trusted IT solutions provider specializing in digital transformation, AI automation, and enterprise software development. ISO 27001 & ISO 9001:2015 certified. Serving clients across India, USA, Nigeria, and UAE with proven expertise.",
+    "CannyMinds is a trusted IT solutions provider specializing in digital transformation, AI automation, and enterprise software development. ISO 9001:2015, ISO 15489:2016, ISO 22716:2007, and FDA 21 CFR Part 11 certified. Serving clients across India, USA, and Nigeria with proven expertise.",
 
   // Extended description for better keyword coverage
   longDescription:
-    "Transform your business with CannyMinds Technology Solutions - your trusted partner for digital transformation, AI-powered automation, custom software development, and enterprise IT services. With ISO 27001 and ISO 9001:2015 certifications, we deliver world-class solutions including CannyDocs (document management), CannyHR (HR & payroll), CannyScan (digitization), and CannyTrack (productivity monitoring). Serving global clients with 24/7 support and industry-leading expertise.",
+    "Transform your business with CannyMinds Technology Solutions - your trusted partner for digital transformation, AI-powered automation, custom software development, and enterprise IT services. With ISO 9001:2015, ISO 15489:2016, ISO 22716:2007, and FDA 21 CFR Part 11 certifications, we deliver world-class solutions including CannyDocs (document management), CannyHR (HR & payroll), CannyScan (digitization), and CannyTrack (productivity monitoring). Serving global clients with 24/7 support and industry-leading expertise.",
 
   url: "https://www.cannymindstech.com",
   ogImage: "https://www.cannymindstech.com/og-image.jpg",
@@ -152,7 +152,7 @@ export const enhancedMetadata: Metadata = {
   },
 
   verification: {
-    google: "your-google-verification-code",
+    google: "fQ2boW5cw6cIVfgTxwovUdz1xrLT0xrySKRUjxU9cKg",
     yandex: "your-yandex-verification-code",
   },
 
@@ -260,7 +260,7 @@ export const enhancedJsonLd = {
         },
         {
           "@type": "PostalAddress",
-          streetAddress: "8751 Collin McKinney Pkwy Suite 1102",
+          streetAddress: "8751 Collin McKinney Pkwy Suite 1102 #525",
           addressLocality: "McKinney",
           addressRegion: "TX",
           postalCode: "75070",
@@ -268,14 +268,9 @@ export const enhancedJsonLd = {
         },
         {
           "@type": "PostalAddress",
-          streetAddress: "No 16, Adeola Adeleye Street",
+          streetAddress: "No:16, Adeola Adeleye Street, Off Coker Road, Illupeju",
           addressLocality: "Lagos",
           addressCountry: "NG",
-        },
-        {
-          "@type": "PostalAddress",
-          addressLocality: "Dubai",
-          addressCountry: "AE",
         },
       ],
 
@@ -342,7 +337,7 @@ export const enhancedJsonLd = {
             "@type": "Organization",
             name: "ISO",
           },
-          name: "ISO 27001 Information Security Management",
+          name: "ISO 9001:2015 Quality Management System",
         },
         {
           "@type": "EducationalOccupationalCredential",
@@ -351,7 +346,25 @@ export const enhancedJsonLd = {
             "@type": "Organization",
             name: "ISO",
           },
-          name: "ISO 9001:2015 Quality Management",
+          name: "ISO 15489:2016 Records Management",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "certification",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "ISO",
+          },
+          name: "ISO 22716:2007 GMP Cosmetics",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "certification",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "FDA",
+          },
+          name: "FDA 21 CFR Part 11 Compliance",
         },
       ],
     },
@@ -448,7 +461,7 @@ export const enhancedJsonLd = {
           name: "Is CannyMinds ISO certified?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, CannyMinds is ISO 27001 (Information Security Management) and ISO 9001:2015 (Quality Management) certified, ensuring world-class quality and security standards.",
+            text: "Yes, CannyMinds holds multiple certifications including ISO 9001:2015 (Quality Management System), ISO 15489:2016 (Records Management), ISO 22716:2007 (GMP Cosmetics), and FDA 21 CFR Part 11 Compliance, ensuring world-class quality, security, and compliance standards.",
           },
         },
         {
@@ -456,7 +469,7 @@ export const enhancedJsonLd = {
           name: "Where is CannyMinds located?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "CannyMinds has global offices in India (Chennai - Headquarters), USA (McKinney, Texas), Nigeria (Lagos), and UAE (Dubai), serving clients across 50+ countries.",
+            text: "CannyMinds has global offices in India (Chennai - Headquarters), USA (McKinney, Texas), and Nigeria (Lagos), serving clients worldwide with 24/7 support.",
           },
         },
         {

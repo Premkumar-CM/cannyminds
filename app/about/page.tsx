@@ -2,6 +2,7 @@ import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Business as BusinessIcon,
   EmojiEvents as AwardIcon,
@@ -147,11 +148,11 @@ export default function AboutPage() {
     <>
       <Navigation />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white pt-16 sm:pt-20">
 
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-          <div className="container-custom">
+        <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 About CannyMinds Technology Solutions
@@ -183,7 +184,7 @@ export default function AboutPage() {
 
         {/* Our Story */}
         <section className="py-20">
-          <div className="container-custom">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-8 text-center">
                 Our Story
@@ -208,7 +209,7 @@ export default function AboutPage() {
 
         {/* Company Statistics */}
         <section className="py-20 bg-gray-50">
-          <div className="container-custom">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
               CannyMinds by the Numbers
             </h2>
@@ -228,7 +229,7 @@ export default function AboutPage() {
 
         {/* Leadership Team */}
         <section className="py-20">
-          <div className="container-custom">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4 text-center">
               Meet Our Leadership Team
             </h2>
@@ -261,7 +262,7 @@ export default function AboutPage() {
 
         {/* Our Values */}
         <section className="py-20 bg-gray-50">
-          <div className="container-custom">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
               Our Core Values
             </h2>
@@ -282,7 +283,7 @@ export default function AboutPage() {
 
         {/* Company Milestones */}
         <section className="py-20">
-          <div className="container-custom">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
               Our Journey
             </h2>
@@ -311,26 +312,63 @@ export default function AboutPage() {
 
         {/* Certifications */}
         <section className="py-20 bg-gray-50">
-          <div className="container-custom">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
               Certifications & Compliance
             </h2>
 
-            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-              {certifications.map((cert, idx) => (
-                <div key={idx} className="bg-white border-2 border-blue-200 rounded-xl p-8 hover:border-blue-600 transition-all">
-                  <div className="flex items-start gap-6">
-                    <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <CertifiedIcon sx={{ fontSize: 40, color: '#2563eb' }} />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-secondary mb-2">{cert.name}</h3>
-                      <p className="text-gray-700 mb-2">{cert.description}</p>
-                      <p className="text-sm text-blue-600 font-semibold">Certified Since {cert.year}</p>
-                    </div>
-                  </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              <div className="bg-white border-2 border-blue-200 rounded-xl p-6 hover:border-blue-600 transition-all flex flex-col items-center text-center">
+                <div className="relative w-full h-40 mb-4">
+                  <Image
+                    src="/certifications/iso-9001-2015.png"
+                    alt="ISO 9001:2015 Certificate"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-              ))}
+                <h3 className="text-lg font-bold text-secondary mb-2">ISO 9001:2015</h3>
+                <p className="text-sm text-gray-600">Quality Management System</p>
+              </div>
+
+              <div className="bg-white border-2 border-green-200 rounded-xl p-6 hover:border-green-600 transition-all flex flex-col items-center text-center">
+                <div className="relative w-full h-40 mb-4">
+                  <Image
+                    src="/certifications/iso-15489-2016.png"
+                    alt="ISO 15489:2016 Certificate"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-secondary mb-2">ISO 15489:2016</h3>
+                <p className="text-sm text-gray-600">Records Management</p>
+              </div>
+
+              <div className="bg-white border-2 border-purple-200 rounded-xl p-6 hover:border-purple-600 transition-all flex flex-col items-center text-center">
+                <div className="relative w-full h-40 mb-4">
+                  <Image
+                    src="/certifications/iso-22716-2007.jpg"
+                    alt="ISO 22716:2007 Certificate"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-secondary mb-2">ISO 22716:2007</h3>
+                <p className="text-sm text-gray-600">GMP Cosmetics</p>
+              </div>
+
+              <div className="bg-white border-2 border-orange-200 rounded-xl p-6 hover:border-orange-600 transition-all flex flex-col items-center text-center">
+                <div className="relative w-full h-40 mb-4">
+                  <Image
+                    src="/certifications/fda-21-cfr-part-11.png"
+                    alt="FDA 21 CFR Part 11 Compliant"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-secondary mb-2">FDA 21 CFR Part 11</h3>
+                <p className="text-sm text-gray-600">Compliance</p>
+              </div>
             </div>
 
             <div className="max-w-4xl mx-auto mt-8 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-xl p-8">
@@ -343,7 +381,7 @@ export default function AboutPage() {
 
         {/* Why Choose CannyMinds */}
         <section className="py-20">
-          <div className="container-custom">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
               Why Choose CannyMinds?
             </h2>
@@ -395,7 +433,7 @@ export default function AboutPage() {
 
         {/* CTA Section */}
         <section className="py-20 bg-gray-50">
-          <div className="container-custom">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-12 text-center text-white shadow-2xl">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to Transform Your Business?

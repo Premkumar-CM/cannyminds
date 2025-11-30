@@ -39,7 +39,6 @@ export default function Navigation() {
     { name: "Products", href: "/#products", hasDropdown: true },
     { name: "Services", href: "/#services" },
     { name: "About", href: "/about" },
-    { name: "Offices", href: "/#offices" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -57,22 +56,16 @@ export default function Navigation() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2 sm:gap-3 group cursor-pointer"
+              className="group cursor-pointer"
             >
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-105 transition-transform">
+              <div className="relative w-32 h-12 sm:w-40 sm:h-14 group-hover:scale-105 transition-transform">
                 <Image
                   src="/logo.png"
-                  alt="CannyMinds Technology Solutions Logo"
+                  alt="CannyMinds Technology Solutions"
                   fill
-                  className="object-contain"
+                  className="object-contain object-left"
                   priority
                 />
-              </div>
-              <div className="hidden sm:block">
-                <div className="text-lg sm:text-xl font-bold text-secondary leading-none">
-                  CannyMinds
-                </div>
-                <div className="text-xs text-gray-600">Technology Solutions</div>
               </div>
             </motion.div>
           </Link>

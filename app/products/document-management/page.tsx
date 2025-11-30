@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/ui/Footer";
+import SocialShare from "@/components/ui/SocialShare";
 import {
   CheckCircle as CheckIcon,
   Star as StarIcon,
@@ -201,6 +202,15 @@ export default function CannyDocsProductPage() {
                     Explore Features
                     <DocumentIcon sx={{ fontSize: 20 }} />
                   </Link>
+                </div>
+
+                {/* Social Share */}
+                <div className="flex items-center gap-4">
+                  <SocialShare
+                    title="CannyDocs - Enterprise Document Management Software"
+                    description="Transform your document management with CannyDocs. 80% OCR accuracy, workflow automation, and enterprise security."
+                  />
+                  <span className="text-sm text-gray-600">Share this product</span>
                 </div>
 
                 <div className="flex items-center gap-6 text-sm text-gray-600 flex-wrap">

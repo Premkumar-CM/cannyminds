@@ -1,18 +1,39 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const products = ["CannyDocs", "CannyHR", "CannyScan", "CannyTrack"];
+  const products = [
+    { name: "CannyDocs", href: "/products/document-management" },
+    { name: "CannyHR", href: "/products/hr-management" },
+    { name: "CannyScan", href: "/products/scanning-solution" },
+    { name: "CannyTrack", href: "/products/tracking-system" },
+  ];
+
   const services = [
     "Digital Transformation",
     "AI & Automation",
     "Software Development",
     "Digital Marketing",
   ];
-  const company = ["About Us", "Careers", "Privacy Policy", "Terms of Service"];
+
+  const company = [
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms of Service", href: "#" },
+  ];
+
+  const certifications = [
+    { name: "ISO 9001:2015", image: "/certifications/iso-9001-2015.png" },
+    { name: "ISO 15489:2016", image: "/certifications/iso-15489-2016.png" },
+    { name: "ISO 22716:2007", image: "/certifications/iso-22716-2007.jpg" },
+    { name: "FDA 21 CFR Part 11", image: "/certifications/fda-21-cfr-part-11.png" },
+  ];
 
   return (
     <footer className="bg-gradient-to-br from-secondary to-primary text-white">
@@ -58,13 +79,13 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Products</h3>
             <ul className="space-y-2">
               {products.map((product) => (
-                <li key={product}>
-                  <a
-                    href="#"
+                <li key={product.name}>
+                  <Link
+                    href={product.href}
                     className="text-blue-100 hover:text-white transition-colors"
                   >
-                    {product}
-                  </a>
+                    {product.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -90,30 +111,40 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h3 className="text-lg font-bold mb-4">Company</h3>
-            <ul className="space-y-2 mb-6">
+            <ul className="space-y-2">
               {company.map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
                     className="text-blue-100 hover:text-white transition-colors"
                   >
-                    {item}
-                  </a>
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
 
-            <div className="bg-white/10 rounded-lg p-4">
-              <div className="text-sm font-semibold mb-2">ISO Certified</div>
-              <div className="flex gap-2">
-                <span className="px-2 py-1 bg-white/20 rounded text-xs">
-                  ISO 27001
-                </span>
-                <span className="px-2 py-1 bg-white/20 rounded text-xs">
-                  ISO 2015
-                </span>
+        {/* Certifications Section */}
+        <div className="border-t border-white/20 pt-8 pb-8">
+          <div className="text-center mb-6">
+            <h3 className="text-lg font-bold mb-2">Certified & Compliant</h3>
+            <p className="text-blue-100 text-sm">Trusted by organizations worldwide for quality and compliance</p>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {certifications.map((cert) => (
+              <div key={cert.name} className="bg-white rounded-lg p-3 hover:shadow-xl transition-shadow">
+                <div className="relative w-20 h-20">
+                  <Image
+                    src={cert.image}
+                    alt={cert.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -124,7 +155,7 @@ export default function Footer() {
               © {currentYear} CannyMinds Technology Solutions. All rights reserved.
             </p>
             <p className="text-blue-200 text-sm">
-              Global Offices: India • USA • Nigeria • UAE
+              Global Offices: India • USA • Nigeria
             </p>
           </div>
         </div>
