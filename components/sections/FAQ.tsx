@@ -55,17 +55,17 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <RevealOnScroll>
-          <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
               FAQ
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mt-4 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary mt-3 sm:mt-4 mb-4 sm:mb-6 px-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Find answers to common questions about our IT solutions and services
             </p>
           </div>
@@ -75,23 +75,24 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <RevealOnScroll key={index} delay={index * 0.1}>
               <motion.div
-                className="mb-4 bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden"
+                className="mb-3 sm:mb-4 bg-white rounded-lg sm:rounded-xl shadow-md border border-gray-100 overflow-hidden"
                 initial={false}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full text-left p-6 flex items-center justify-between transition-colors hover:bg-gray-50"
+                  className="w-full text-left p-4 sm:p-6 flex items-center justify-between transition-colors hover:bg-gray-50"
                   aria-expanded={openIndex === index}
                 >
-                  <span className="text-lg font-semibold text-secondary pr-8">
+                  <span className="text-sm sm:text-base md:text-lg font-semibold text-secondary pr-4 sm:pr-8">
                     {faq.question}
                   </span>
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
+                    className="flex-shrink-0"
                   >
                     <svg
-                      className="w-6 h-6 text-primary flex-shrink-0"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-primary"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -113,8 +114,8 @@ export default function FAQ() {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-6 pt-2">
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-2">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{faq.answer}</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -124,20 +125,20 @@ export default function FAQ() {
 
         {/* CTA below FAQ */}
         <RevealOnScroll delay={0.5}>
-          <div className="mt-16 text-center bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-secondary mb-4">
+          <div className="mt-12 sm:mt-16 text-center bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl sm:rounded-2xl p-6 sm:p-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-secondary mb-3 sm:mb-4 px-4">
               Still Have Questions?
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-gray-600 mb-5 sm:mb-6 max-w-2xl mx-auto px-4">
               Our team of experts is ready to help you find the perfect IT solution
               for your business needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg shadow-primary/30 transition-all duration-300"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-white font-semibold rounded-lg shadow-lg shadow-primary/30 transition-all duration-300 text-sm sm:text-base"
               >
                 Contact Us
               </motion.a>
@@ -145,7 +146,7 @@ export default function FAQ() {
                 href="tel:+91-9361801926"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-white text-primary font-semibold rounded-lg border-2 border-primary transition-all duration-300 shadow-lg"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-primary font-semibold rounded-lg border-2 border-primary transition-all duration-300 shadow-lg text-sm sm:text-base"
               >
                 Call: +91-9361801926
               </motion.a>

@@ -94,7 +94,7 @@ const jsonLd = {
       "dateModified": new Date().toISOString(),
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://cannymindstech.com/products/tracking-system"
+        "@id": "https://cannymindstech.com/solutions/tracking-system"
       }
     },
     {
@@ -153,12 +153,12 @@ export default function CannyTrackProductPage() {
         {/* Breadcrumb */}
         <nav className="bg-gray-50 border-b border-gray-200 py-4 mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ol className="flex items-center space-x-2 text-sm">
-              <li><Link href="/" className="text-primary hover:text-primary/80">Home</Link></li>
+            <ol className="flex items-center space-x-2 text-xs sm:text-sm overflow-x-auto">
+              <li><Link href="/" className="text-primary hover:text-primary/80 whitespace-nowrap">Home</Link></li>
               <li className="text-gray-400">/</li>
-              <li><Link href="/#products" className="text-primary hover:text-primary/80">Products</Link></li>
+              <li><Link href="/#solutions" className="text-primary hover:text-primary/80 whitespace-nowrap">Solutions</Link></li>
               <li className="text-gray-400">/</li>
-              <li className="text-gray-600 font-medium">CannyTrack - Productivity Monitoring System</li>
+              <li className="text-gray-600 font-medium truncate">CannyTrack - Productivity Monitoring System</li>
             </ol>
           </div>
         </nav>
@@ -174,11 +174,11 @@ export default function CannyTrackProductPage() {
                   Consent-Based Productivity Monitoring
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
                   Boost Team Productivity with <span className="text-orange-600">CannyTrack</span>
                 </h1>
 
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
                   Comprehensive workforce monitoring solution providing real-time visibility into remote employee activities.
                   Track productivity with <strong>consent-based monitoring</strong>, activity analytics, optional screenshots,
                   app/URL tracking, and data loss prevention—all while maintaining transparency and employee privacy.
@@ -232,7 +232,7 @@ export default function CannyTrackProductPage() {
         {/* Stats Section */}
         <section className="py-12 bg-orange-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-4 gap-8 text-center text-white">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center text-white">
               {[
                 { number: "10+", label: "Happy Clients" },
                 { number: "2,000+", label: "Users Monitored" },
@@ -240,8 +240,8 @@ export default function CannyTrackProductPage() {
                 { number: "100%", label: "Data Privacy" },
               ].map((stat, idx) => (
                 <div key={idx}>
-                  <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                  <div className="text-white/80">{stat.label}</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-sm sm:text-base text-white/80">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -862,21 +862,21 @@ export default function CannyTrackProductPage() {
                   name: "CannyDocs",
                   tagline: "Document Management System",
                   description: "Secure document management with access control, version tracking, and audit trails. Perfect complement to CannyTrack for monitoring document access and preventing data leaks.",
-                  link: "/products/document-management",
+                  link: "/solutions/document-management",
                   color: "blue",
                 },
                 {
                   name: "CannyHR",
                   tagline: "HR & Payroll Management",
                   description: "Complete HRMS with time tracking, attendance, and payroll. Integrate with CannyTrack for comprehensive workforce management and productivity analytics.",
-                  link: "/products/hr-management",
+                  link: "/solutions/hr-management",
                   color: "green",
                 },
                 {
                   name: "CannyScan",
                   tagline: "Document Scanning Services",
                   description: "Professional document digitization services with OCR and secure cloud storage. Digitize physical records for complete digital asset tracking.",
-                  link: "/products/scanning-solution",
+                  link: "/solutions/scanning-solution",
                   color: "purple",
                 },
               ].map((product, idx) => (

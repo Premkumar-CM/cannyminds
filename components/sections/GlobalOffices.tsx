@@ -53,7 +53,7 @@ export default function GlobalOffices() {
               height="100"
               patternUnits="userSpaceOnUse"
             >
-              <circle cx="50" cy="50" r="1" fill="#4154f1" />
+              <circle cx="50" cy="50" r="1" fill="#3170b5" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#map-pattern)" />

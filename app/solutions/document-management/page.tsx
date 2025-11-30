@@ -97,7 +97,7 @@ const jsonLd = {
       "dateModified": new Date().toISOString(),
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://cannymindstech.com/products/document-management"
+        "@id": "https://cannymindstech.com/solutions/document-management"
       }
     },
     {
@@ -156,12 +156,12 @@ export default function CannyDocsProductPage() {
         {/* Breadcrumb */}
         <nav className="bg-gray-50 border-b border-gray-200 py-4 mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ol className="flex items-center space-x-2 text-sm">
-              <li><Link href="/" className="text-primary hover:text-primary/80">Home</Link></li>
+            <ol className="flex items-center space-x-2 text-xs sm:text-sm overflow-x-auto">
+              <li><Link href="/" className="text-primary hover:text-primary/80 whitespace-nowrap">Home</Link></li>
               <li className="text-gray-400">/</li>
-              <li><Link href="/#products" className="text-primary hover:text-primary/80">Products</Link></li>
+              <li><Link href="/#solutions" className="text-primary hover:text-primary/80 whitespace-nowrap">Solutions</Link></li>
               <li className="text-gray-400">/</li>
-              <li className="text-gray-600 font-medium">CannyDocs - Document Management Software</li>
+              <li className="text-gray-600 font-medium truncate">CannyDocs - Document Management Software</li>
             </ol>
           </div>
         </nav>
@@ -177,11 +177,11 @@ export default function CannyDocsProductPage() {
                   Trusted by Growing Businesses Worldwide
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
                   Transform Your Document Management with <span className="text-primary">CannyDocs</span>
                 </h1>
 
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
                   Enterprise-grade document management system with <strong>80% OCR accuracy</strong>, intelligent workflow automation,
                   and military-grade security. Go paperless and organize <strong>50,000+ documents</strong> effortlessly with cloud,
                   on-premise, or hybrid deployment.
@@ -235,7 +235,7 @@ export default function CannyDocsProductPage() {
         {/* Stats Section */}
         <section className="py-12 bg-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-4 gap-8 text-center text-white">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center text-white">
               {[
                 { number: "10+", label: "Happy Clients" },
                 { number: "100K+", label: "Documents Managed" },
@@ -243,8 +243,8 @@ export default function CannyDocsProductPage() {
                 { number: "99.9%", label: "Uptime Guarantee" },
               ].map((stat, idx) => (
                 <div key={idx}>
-                  <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                  <div className="text-white/80">{stat.label}</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-sm sm:text-base text-white/80">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -310,7 +310,7 @@ export default function CannyDocsProductPage() {
                 and intuitive workflow automation, CannyDocs transforms how organizations handle document management challenges.
               </p>
 
-              <div className="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg">
+              <div className="bg-primary-50 border-l-4 border-primary p-6 rounded-r-lg">
                 <p className="font-semibold text-secondary mb-2">🎯 Perfect For:</p>
                 <p className="text-gray-700">
                   Healthcare, Legal, Finance, Manufacturing, Government, and any organization managing large volumes of documents
@@ -331,7 +331,7 @@ export default function CannyDocsProductPage() {
               {/* Feature 1 */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary hover:shadow-xl transition-all">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <SearchIcon sx={{ fontSize: 32, color: '#4154f1' }} />
+                  <SearchIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-4">Advanced OCR & Full-Text Search</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -357,7 +357,7 @@ export default function CannyDocsProductPage() {
               {/* Feature 2 */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary hover:shadow-xl transition-all">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <SecurityIcon sx={{ fontSize: 32, color: '#4154f1' }} />
+                  <SecurityIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-4">Enterprise-Grade Security</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -383,7 +383,7 @@ export default function CannyDocsProductPage() {
               {/* Feature 3 */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary hover:shadow-xl transition-all">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <WorkflowIcon sx={{ fontSize: 32, color: '#4154f1' }} />
+                  <WorkflowIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-4">Intelligent Workflow Automation</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -409,7 +409,7 @@ export default function CannyDocsProductPage() {
               {/* Feature 4 */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary hover:shadow-xl transition-all">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <ShareIcon sx={{ fontSize: 32, color: '#4154f1' }} />
+                  <ShareIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-4">Secure Document Sharing</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -435,7 +435,7 @@ export default function CannyDocsProductPage() {
               {/* Feature 5 */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary hover:shadow-xl transition-all">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <CloudIcon sx={{ fontSize: 32, color: '#4154f1' }} />
+                  <CloudIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-4">Flexible Cloud & On-Premise</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -461,7 +461,7 @@ export default function CannyDocsProductPage() {
               {/* Feature 6 */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary hover:shadow-xl transition-all">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <StorageIcon sx={{ fontSize: 32, color: '#4154f1' }} />
+                  <StorageIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-4">Smart Document Organization</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -584,7 +584,7 @@ export default function CannyDocsProductPage() {
               {/* On-Premise */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary transition-all">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <ComputerIcon sx={{ fontSize: 32, color: '#4154f1' }} />
+                  <ComputerIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-2xl font-bold text-secondary mb-4">On-Premise</h3>
                 <p className="text-gray-700 mb-6">Install on your company infrastructure for complete data control and customization.</p>
@@ -611,7 +611,7 @@ export default function CannyDocsProductPage() {
                   POPULAR
                 </div>
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <PublicIcon sx={{ fontSize: 32, color: '#4154f1' }} />
+                  <PublicIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-2xl font-bold text-secondary mb-4">Cloud (SaaS)</h3>
                 <p className="text-gray-700 mb-6">Fully hosted solution with automatic updates, backups, and 24/7 monitoring.</p>
@@ -635,7 +635,7 @@ export default function CannyDocsProductPage() {
               {/* Hybrid */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary transition-all">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <BusinessIcon sx={{ fontSize: 32, color: '#4154f1' }} />
+                  <BusinessIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-2xl font-bold text-secondary mb-4">Hybrid</h3>
                 <p className="text-gray-700 mb-6">Cloud storage with on-premise application access for maximum flexibility.</p>
@@ -1290,7 +1290,7 @@ export default function CannyDocsProductPage() {
                   title: "HR Management System",
                   description: "Comprehensive HR solution for employee management, payroll, attendance, and performance tracking.",
                   features: ["Employee Records", "Payroll Automation", "Leave Management", "Performance Reviews"],
-                  link: "/products/hr-management",
+                  link: "/solutions/hr-management",
                   color: "from-green-50 to-white border-green-200"
                 },
                 {
@@ -1298,7 +1298,7 @@ export default function CannyDocsProductPage() {
                   title: "Enterprise Scanning Solution",
                   description: "High-speed document scanning with OCR, batch processing, and direct integration with CannyDocs.",
                   features: ["Batch Scanning", "Auto-Classification", "Quality Enhancement", "Direct Upload to CannyDocs"],
-                  link: "/products/scanning-solution",
+                  link: "/solutions/scanning-solution",
                   color: "from-purple-50 to-white border-purple-200"
                 },
                 {
@@ -1306,7 +1306,7 @@ export default function CannyDocsProductPage() {
                   title: "Document Tracking System",
                   description: "Real-time tracking of physical and digital documents with barcode/QR integration and chain of custody.",
                   features: ["Barcode Tracking", "Chain of Custody", "Location Monitoring", "Audit Compliance"],
-                  link: "/products/tracking-system",
+                  link: "/solutions/tracking-system",
                   color: "from-orange-50 to-white border-orange-200"
                 },
               ].map((product, idx) => (

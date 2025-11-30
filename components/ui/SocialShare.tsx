@@ -7,6 +7,7 @@ import {
   Twitter as TwitterIcon,
   LinkedIn as LinkedInIcon,
   WhatsApp as WhatsAppIcon,
+  Reddit as RedditIcon,
   ContentCopy as CopyIcon,
   Check as CheckIcon,
 } from '@mui/icons-material';
@@ -33,6 +34,7 @@ export default function SocialShare({ title, description, url }: SocialShareProp
     twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
     whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
+    reddit: `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}`,
   };
 
   const handleCopyLink = async () => {
@@ -72,7 +74,7 @@ export default function SocialShare({ title, description, url }: SocialShareProp
           />
 
           {/* Share Options */}
-          <div className="absolute top-full right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 p-4 z-50 animate-fade-in">
+          <div className="absolute top-full right-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-200 p-4 z-50 animate-fade-in">
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-bold text-secondary">Share this page</h3>
               <button
@@ -88,7 +90,7 @@ export default function SocialShare({ title, description, url }: SocialShareProp
             <div className="grid grid-cols-2 gap-2 mb-4">
               <button
                 onClick={() => handleShare('facebook')}
-                className="flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm"
+                className="flex items-center gap-2 px-3 py-2 bg-[#1877f2] hover:bg-[#0c63d4] text-white rounded-lg transition-colors text-sm"
               >
                 <FacebookIcon sx={{ fontSize: 18 }} />
                 <span>Facebook</span>
@@ -104,7 +106,7 @@ export default function SocialShare({ title, description, url }: SocialShareProp
 
               <button
                 onClick={() => handleShare('linkedin')}
-                className="flex items-center gap-2 px-3 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg transition-colors text-sm"
+                className="flex items-center gap-2 px-3 py-2 bg-[#0a66c2] hover:bg-[#004182] text-white rounded-lg transition-colors text-sm"
               >
                 <LinkedInIcon sx={{ fontSize: 18 }} />
                 <span>LinkedIn</span>
@@ -116,6 +118,14 @@ export default function SocialShare({ title, description, url }: SocialShareProp
               >
                 <WhatsAppIcon sx={{ fontSize: 18 }} />
                 <span>WhatsApp</span>
+              </button>
+
+              <button
+                onClick={() => handleShare('reddit')}
+                className="flex items-center gap-2 px-3 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors text-sm"
+              >
+                <RedditIcon sx={{ fontSize: 18 }} />
+                <span>Reddit</span>
               </button>
             </div>
 

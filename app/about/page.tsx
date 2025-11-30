@@ -1,5 +1,6 @@
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
+import SocialShare from '@/components/ui/SocialShare';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -154,28 +155,28 @@ export default function AboutPage() {
         <section className="bg-gradient-to-br from-primary to-secondary text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 About CannyMinds Technology Solutions
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100 leading-relaxed mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl text-blue-100 leading-relaxed mb-8">
                 Empowering businesses since 2003 with innovative digital transformation, AI automation, and enterprise software solutions.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-lg px-6 py-3">
-                  <div className="text-3xl font-bold">20+</div>
-                  <div className="text-sm text-blue-100">Years of Excellence</div>
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 sm:gap-4 justify-center">
+                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-lg px-4 sm:px-6 py-3">
+                  <div className="text-2xl sm:text-3xl font-bold">20+</div>
+                  <div className="text-xs sm:text-sm text-blue-100">Years of Excellence</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-lg px-6 py-3">
-                  <div className="text-3xl font-bold">10+</div>
-                  <div className="text-sm text-blue-100">Global Clients</div>
+                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-lg px-4 sm:px-6 py-3">
+                  <div className="text-2xl sm:text-3xl font-bold">10+</div>
+                  <div className="text-xs sm:text-sm text-blue-100">Global Clients</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-lg px-6 py-3">
-                  <div className="text-3xl font-bold">4</div>
-                  <div className="text-sm text-blue-100">Countries</div>
+                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-lg px-4 sm:px-6 py-3">
+                  <div className="text-2xl sm:text-3xl font-bold">4</div>
+                  <div className="text-xs sm:text-sm text-blue-100">Countries</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-lg px-6 py-3">
-                  <div className="text-3xl font-bold">ISO</div>
-                  <div className="text-sm text-blue-100">Certified</div>
+                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-lg px-4 sm:px-6 py-3">
+                  <div className="text-2xl sm:text-3xl font-bold">ISO</div>
+                  <div className="text-xs sm:text-sm text-blue-100">Certified</div>
                 </div>
               </div>
             </div>
@@ -210,17 +211,17 @@ export default function AboutPage() {
         {/* Company Statistics */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
               CannyMinds by the Numbers
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {stats.map((stat, idx) => (
-                <div key={idx} className="bg-white border-2 border-gray-200 rounded-xl p-8 text-center hover:border-blue-600 transition-all">
-                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 text-blue-600">
+                <div key={idx} className="bg-white border-2 border-gray-200 rounded-xl p-6 sm:p-8 text-center hover:border-primary transition-all">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary-50 rounded-lg flex items-center justify-center mx-auto mb-4 text-primary">
                     {stat.icon}
                   </div>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">{stat.value}</div>
-                  <div className="text-gray-600 font-semibold">{stat.label}</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                  <div className="text-sm sm:text-base text-gray-600 font-semibold">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -230,28 +231,28 @@ export default function AboutPage() {
         {/* Leadership Team */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-4 text-center">
               Meet Our Leadership Team
             </h2>
-            <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
               Five visionary leaders driving CannyMinds' mission to deliver world-class digital transformation solutions.
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {leaders.map((leader, idx) => (
-                <div key={idx} className={`bg-gradient-to-br from-${leader.color}-50 to-white border-2 border-${leader.color}-200 rounded-xl p-8 hover:border-${leader.color}-600 transition-all`}>
+                <div key={idx} className={`bg-gradient-to-br from-${leader.color}-50 to-white border-2 border-${leader.color}-200 rounded-xl p-6 sm:p-8 hover:border-${leader.color}-600 transition-all`}>
                   {/* Profile Image Placeholder */}
-                  <div className={`w-32 h-32 bg-gradient-to-br from-${leader.color}-400 to-${leader.color}-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl font-bold shadow-lg`}>
+                  <div className={`w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-${leader.color}-400 to-${leader.color}-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl sm:text-4xl font-bold shadow-lg`}>
                     {leader.placeholder}
                   </div>
 
-                  <h3 className="text-2xl font-bold text-secondary mb-2 text-center">
+                  <h3 className="text-xl sm:text-2xl font-bold text-secondary mb-2 text-center">
                     {leader.name}
                   </h3>
-                  <p className={`text-sm font-semibold text-${leader.color}-600 mb-4 text-center`}>
+                  <p className={`text-xs sm:text-sm font-semibold text-${leader.color}-600 mb-4 text-center`}>
                     {leader.title}
                   </p>
-                  <p className="text-gray-700 leading-relaxed text-center">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-center">
                     {leader.bio}
                   </p>
                 </div>
@@ -263,18 +264,18 @@ export default function AboutPage() {
         {/* Our Values */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
               Our Core Values
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {values.map((value, idx) => (
-                <div key={idx} className={`bg-white border-2 border-${value.color}-200 rounded-xl p-8 hover:border-${value.color}-600 transition-all`}>
-                  <div className={`w-16 h-16 bg-${value.color}-100 rounded-lg flex items-center justify-center mb-6 text-${value.color}-600`}>
+                <div key={idx} className={`bg-white border-2 border-${value.color}-200 rounded-xl p-6 sm:p-8 hover:border-${value.color}-600 transition-all`}>
+                  <div className={`w-14 h-14 sm:w-16 sm:h-16 bg-${value.color}-100 rounded-lg flex items-center justify-center mb-6 text-${value.color}-600`}>
                     {value.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-secondary mb-4">{value.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{value.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-secondary mb-4">{value.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
@@ -297,9 +298,9 @@ export default function AboutPage() {
                         {milestone.year}
                       </div>
                     </div>
-                    <div className="flex-1 bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-600 transition-all">
+                    <div className="flex-1 bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-primary transition-all">
                       <div className="flex items-center gap-3">
-                        <GrowthIcon sx={{ fontSize: 24, color: '#2563eb' }} />
+                        <GrowthIcon sx={{ fontSize: 24, color: '#3170b5' }} />
                         <h3 className="text-lg font-bold text-secondary">{milestone.event}</h3>
                       </div>
                     </div>
@@ -313,12 +314,12 @@ export default function AboutPage() {
         {/* Certifications */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-12 text-center">
               Certifications & Compliance
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-              <div className="bg-white border-2 border-blue-200 rounded-xl p-6 hover:border-blue-600 transition-all flex flex-col items-center text-center">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12">
+              <div className="bg-white border-2 border-primary-200 rounded-xl p-6 hover:border-primary transition-all flex flex-col items-center text-center">
                 <div className="relative w-full h-40 mb-4">
                   <Image
                     src="/certifications/iso-9001-2015.png"
@@ -371,7 +372,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="max-w-4xl mx-auto mt-8 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-xl p-8">
+            <div className="max-w-4xl mx-auto mt-8 bg-gradient-to-br from-primary-50 to-white border-2 border-primary-200 rounded-xl p-8">
               <p className="text-gray-700 leading-relaxed text-center">
                 Our ISO certifications demonstrate our commitment to <strong>information security, quality management, and operational excellence</strong>. Every project we undertake follows rigorous processes to ensure compliance, data protection, and customer satisfaction.
               </p>
@@ -419,8 +420,8 @@ export default function AboutPage() {
                   icon: <DeliveryIcon sx={{ fontSize: 40 }} />,
                 },
               ].map((reason, idx) => (
-                <div key={idx} className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-blue-600 transition-all">
-                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                <div key={idx} className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary transition-all">
+                  <div className="w-16 h-16 bg-primary-50 rounded-lg flex items-center justify-center mb-6 text-primary">
                     {reason.icon}
                   </div>
                   <h3 className="text-xl font-bold text-secondary mb-4">{reason.title}</h3>
@@ -434,28 +435,36 @@ export default function AboutPage() {
         {/* CTA Section */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-12 text-center text-white shadow-2xl">
+            <div className="bg-gradient-to-br from-primary to-primary-800 rounded-xl p-12 text-center text-white shadow-2xl">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to Transform Your Business?
               </h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Join 10+ organizations worldwide that trust CannyMinds for their digital transformation journey. Let's build something great together.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
                   href="/contact"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg inline-flex items-center justify-center gap-2"
+                  className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg inline-flex items-center justify-center gap-2"
                 >
                   Contact Us Today
                   <ArrowIcon sx={{ fontSize: 20 }} />
                 </Link>
                 <Link
                   href="/#products"
-                  className="bg-blue-700 text-white border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-900 transition-all inline-flex items-center justify-center gap-2"
+                  className="bg-primary-700 text-white border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-900 transition-all inline-flex items-center justify-center gap-2"
                 >
-                  Explore Our Products
+                  Explore Our Solutions
                   <BusinessIcon sx={{ fontSize: 20 }} />
                 </Link>
+              </div>
+
+              {/* Social Share */}
+              <div className="mt-8 flex justify-center">
+                <SocialShare
+                  title="About CannyMinds Technology Solutions - ISO Certified IT Company"
+                  description="Learn about CannyMinds - 20+ years of excellence in digital transformation, AI automation, and enterprise software development. ISO certified with global offices."
+                />
               </div>
             </div>
           </div>

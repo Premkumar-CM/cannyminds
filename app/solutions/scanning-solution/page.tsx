@@ -93,7 +93,7 @@ const jsonLd = {
       "dateModified": new Date().toISOString(),
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://cannymindstech.com/products/scanning-solution"
+        "@id": "https://cannymindstech.com/solutions/scanning-solution"
       }
     },
     {
@@ -196,12 +196,12 @@ export default function CannyScanProductPage() {
         {/* Breadcrumb */}
         <nav className="bg-gray-50 border-b border-gray-200 py-4 mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ol className="flex items-center space-x-2 text-sm">
-              <li><Link href="/" className="text-primary hover:text-primary/80">Home</Link></li>
+            <ol className="flex items-center space-x-2 text-xs sm:text-sm overflow-x-auto">
+              <li><Link href="/" className="text-primary hover:text-primary/80 whitespace-nowrap">Home</Link></li>
               <li className="text-gray-400">/</li>
-              <li><Link href="/#products" className="text-primary hover:text-primary/80">Products</Link></li>
+              <li><Link href="/#solutions" className="text-primary hover:text-primary/80 whitespace-nowrap">Solutions</Link></li>
               <li className="text-gray-400">/</li>
-              <li className="text-gray-600 font-medium">CannyScan - Document Scanning Services</li>
+              <li className="text-gray-600 font-medium truncate">CannyScan - Document Scanning Services</li>
             </ol>
           </div>
         </nav>
@@ -217,11 +217,11 @@ export default function CannyScanProductPage() {
                   Professional Scanning Services
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
                   Transform Physical Documents into Digital Assets with <span className="text-purple-600">CannyScan</span>
                 </h1>
 
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
                   Professional document scanning and digitization services for all document types. From paper files to microfilm,
                   large-format plans to historical books—we digitize everything with <strong>99.9% accuracy</strong>. Onsite and offsite
                   options available with secure cloud hosting.
@@ -529,9 +529,9 @@ export default function CannyScanProductPage() {
                 <p className="text-sm font-semibold text-secondary">Best for: Government, Healthcare, Legal, Financial Institutions</p>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-xl p-8 shadow-lg">
-                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                  <SecurityIcon sx={{ fontSize: 32, color: '#3b82f6' }} />
+              <div className="bg-gradient-to-br from-primary-50 to-white border-2 border-primary-200 rounded-xl p-8 shadow-lg">
+                <div className="w-16 h-16 bg-primary-50 rounded-lg flex items-center justify-center mb-6">
+                  <SecurityIcon sx={{ fontSize: 32, color: '#3170b5' }} />
                 </div>
                 <h3 className="text-2xl font-bold text-secondary mb-4">Offsite Scanning</h3>
                 <p className="text-gray-700 mb-6">
@@ -893,7 +893,7 @@ export default function CannyScanProductPage() {
 
             <div className="mt-8 text-center">
               <Link
-                href="/products/document-management"
+                href="/solutions/document-management"
                 className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-800 font-semibold text-lg"
               >
                 Learn More About CannyDocs DMS
@@ -1141,21 +1141,21 @@ export default function CannyScanProductPage() {
                   name: "CannyDocs",
                   tagline: "Document Management System",
                   description: "Complete DMS with digital asset management, automated workflows, and 80% OCR accuracy. Manage scanned documents with version control and advanced search.",
-                  link: "/products/document-management",
+                  link: "/solutions/document-management",
                   color: "blue",
                 },
                 {
                   name: "CannyHR",
                   tagline: "HR & Payroll Management",
                   description: "Hire-to-Retire HRMS with payroll, attendance tracking, leave management, and 350+ biometric integrations. Digitize employee records and automate HR workflows.",
-                  link: "/products/hr-management",
+                  link: "/solutions/hr-management",
                   color: "green",
                 },
                 {
                   name: "CannyTrack",
                   tagline: "Productivity Monitoring",
                   description: "Workforce productivity tracking with activity monitoring, screenshots, and data loss prevention. Monitor remote teams with consent-based tracking.",
-                  link: "/products/tracking-system",
+                  link: "/solutions/tracking-system",
                   color: "orange",
                 },
               ].map((product, idx) => (

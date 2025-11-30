@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 import RevealOnScroll from "../ui/RevealOnScroll";
 
 export default function Hero() {
@@ -17,7 +18,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-white pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-white pt-20"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -100,11 +101,11 @@ export default function Hero() {
 
           {/* Main Heading - SEO Optimized H1 */}
           <RevealOnScroll delay={0.4}>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="block bg-gradient-to-r from-secondary via-primary to-primary bg-clip-text text-transparent">
                 Digital Transformation & AI Solutions
               </span>
-              <span className="block text-secondary mt-2 text-4xl md:text-5xl">
+              <span className="block text-secondary mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                 CannyMinds Technology Solutions
               </span>
             </h1>
@@ -112,7 +113,7 @@ export default function Hero() {
 
           {/* Description - Enhanced with keywords */}
           <RevealOnScroll delay={0.6}>
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
               Leading IT solutions provider with 20+ years of experience in digital transformation,
               AI automation, enterprise software development, and business process services.
               ISO 27001 certified, serving 500+ clients across India, USA, Nigeria, and UAE.
@@ -121,36 +122,40 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <RevealOnScroll delay={0.8}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-primary text-white font-semibold rounded-lg overflow-hidden shadow-lg shadow-primary/30 transition-all duration-300"
-              >
-                <span className="relative z-10">Get Started</span>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+              <Link href="/contact" className="w-full sm:w-auto">
                 <motion.div
-                  className="absolute inset-0 bg-secondary"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.button>
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white font-semibold rounded-lg overflow-hidden shadow-lg shadow-primary/30 transition-all duration-300 cursor-pointer text-center"
+                >
+                  <span className="relative z-10">Get Started</span>
+                  <motion.div
+                    className="absolute inset-0 bg-secondary"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+              </Link>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-primary font-semibold rounded-lg border-2 border-primary transition-all duration-300 shadow-lg"
-              >
-                Explore Solutions
-              </motion.button>
+              <Link href="#products" className="w-full sm:w-auto">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-primary font-semibold rounded-lg border-2 border-primary transition-all duration-300 shadow-lg cursor-pointer text-center"
+                >
+                  Explore Solutions
+                </motion.div>
+              </Link>
             </div>
           </RevealOnScroll>
 
           {/* Stats */}
           <RevealOnScroll delay={1}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-gray-200">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-12 sm:mt-16 md:mt-20 pt-8 sm:pt-12 border-t border-gray-200 px-4">
               {[
-                { value: "4+", label: "Global Offices" },
+                { value: "3", label: "Global Offices" },
                 { value: "500+", label: "Clients Worldwide" },
                 { value: "20+", label: "Years Experience" },
                 { value: "ISO", label: "Certified" },
@@ -162,10 +167,10 @@ export default function Hero() {
                   transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl font-bold text-primary mb-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 sm:mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-600 font-medium">
+                  <div className="text-xs sm:text-sm text-gray-600 font-medium">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -180,16 +185,16 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 hidden sm:flex"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center gap-2 text-gray-400"
         >
-          <span className="text-sm font-medium">Scroll to explore</span>
+          <span className="text-xs sm:text-sm font-medium">Scroll to explore</span>
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5 sm:w-6 sm:h-6"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"

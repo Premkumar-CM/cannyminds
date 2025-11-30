@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
+import SocialShare from '@/components/ui/SocialShare';
 import ContactForm from '@/components/contact/ContactForm';
 import Link from 'next/link';
 import {
@@ -87,7 +88,7 @@ export default function ContactPage() {
                 Get in Touch with CannyMinds
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 leading-relaxed">
-                Have questions about our products or services? We're here to help you transform your business with innovative technology solutions.
+                Have questions about our solutions or services? We're here to help you transform your business with innovative technology solutions.
               </p>
             </div>
           </div>
@@ -103,17 +104,17 @@ export default function ContactPage() {
 
               {/* Quick Contact Info */}
               <div className="space-y-8">
-                <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-xl p-8">
+                <div className="bg-gradient-to-br from-primary-50 to-white border-2 border-primary-200 rounded-xl p-8">
                   <h2 className="text-3xl font-bold text-secondary mb-6">Quick Contact</h2>
 
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <EmailIcon sx={{ fontSize: 24, color: '#2563eb' }} />
+                      <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <EmailIcon sx={{ fontSize: 24, color: '#3170b5' }} />
                       </div>
                       <div>
                         <h3 className="font-bold text-secondary mb-1">Email Us</h3>
-                        <a href="mailto:info@cannymindstech.com" className="text-blue-600 hover:underline">
+                        <a href="mailto:info@cannymindstech.com" className="text-primary hover:underline">
                           info@cannymindstech.com
                         </a>
                         <p className="text-sm text-gray-600 mt-1">
@@ -128,7 +129,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-bold text-secondary mb-1">Call Us</h3>
-                        <a href="tel:+919361801926" className="text-blue-600 hover:underline">
+                        <a href="tel:+919361801926" className="text-primary hover:underline">
                           +91 93618 01926
                         </a>
                         <p className="text-sm text-gray-600 mt-1">
@@ -160,7 +161,7 @@ export default function ContactPage() {
                       href="https://www.linkedin.com/company/cannyminds"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center text-white transition-all"
+                      className="w-12 h-12 bg-[#0a66c2] hover:bg-[#004182] rounded-lg flex items-center justify-center text-white transition-all"
                       aria-label="LinkedIn"
                     >
                       <LinkedInIcon />
@@ -178,7 +179,7 @@ export default function ContactPage() {
                       href="https://www.facebook.com/cannyminds"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-blue-700 hover:bg-blue-800 rounded-lg flex items-center justify-center text-white transition-all"
+                      className="w-12 h-12 bg-[#1877f2] hover:bg-[#0c63d4] rounded-lg flex items-center justify-center text-white transition-all"
                       aria-label="Facebook"
                     >
                       <FacebookIcon />
@@ -250,11 +251,11 @@ export default function ContactPage() {
 
                     <div>
                       <p className="font-semibold text-gray-700 mb-1">Phone:</p>
-                      <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="text-blue-600 hover:underline block">
+                      <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="text-primary hover:underline block">
                         {office.phone}
                       </a>
                       {office.phone2 && (
-                        <a href={`tel:${office.phone2.replace(/\s/g, '')}`} className="text-blue-600 hover:underline block">
+                        <a href={`tel:${office.phone2.replace(/\s/g, '')}`} className="text-primary hover:underline block">
                           {office.phone2}
                         </a>
                       )}
@@ -262,11 +263,11 @@ export default function ContactPage() {
 
                     <div>
                       <p className="font-semibold text-gray-700 mb-1">Email:</p>
-                      <a href={`mailto:${office.email}`} className="text-blue-600 hover:underline break-all block">
+                      <a href={`mailto:${office.email}`} className="text-primary hover:underline break-all block">
                         {office.email}
                       </a>
                       {office.email2 && (
-                        <a href={`mailto:${office.email2}`} className="text-blue-600 hover:underline break-all block">
+                        <a href={`mailto:${office.email2}`} className="text-primary hover:underline break-all block">
                           {office.email2}
                         </a>
                       )}
@@ -294,21 +295,29 @@ export default function ContactPage() {
                 Join 10+ organizations worldwide that trust CannyMinds for their digital transformation journey.
                 Let's discuss how we can help you achieve your business goals.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
                   href="tel:+919361801926"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg inline-flex items-center justify-center gap-2"
+                  className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg inline-flex items-center justify-center gap-2"
                 >
                   <PhoneIcon sx={{ fontSize: 20 }} />
                   Call Now
                 </a>
                 <a
                   href="mailto:info@cannymindstech.com"
-                  className="bg-blue-700 text-white border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-900 transition-all inline-flex items-center justify-center gap-2"
+                  className="bg-primary text-white border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-all inline-flex items-center justify-center gap-2"
                 >
                   <EmailIcon sx={{ fontSize: 20 }} />
                   Email Us
                 </a>
+              </div>
+
+              {/* Social Share */}
+              <div className="mt-8 flex justify-center">
+                <SocialShare
+                  title="Contact CannyMinds Technology Solutions - Get in Touch Today"
+                  description="Contact CannyMinds for digital transformation, AI automation, and enterprise software services. Offices in India, USA, and Nigeria. 24/7 support available."
+                />
               </div>
             </div>
           </div>

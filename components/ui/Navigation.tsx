@@ -27,17 +27,17 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const productLinks = [
-    { name: "CannyDocs - Document Management", href: "/products/document-management" },
-    { name: "CannyHR - HR Management", href: "/products/hr-management" },
-    { name: "CannyScan - Scanning Solution", href: "/products/scanning-solution" },
-    { name: "CannyTrack - Tracking System", href: "/products/tracking-system" },
+  const products = [
+    { name: "CannyDocs - Document Management", href: "/solutions/document-management" },
+    { name: "CannyHR - HR Management", href: "/solutions/hr-management" },
+    { name: "CannyScan - Scanning Solution", href: "/solutions/scanning-solution" },
+    { name: "CannyTrack - Tracking System", href: "/solutions/tracking-system" },
   ];
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "/#products", hasDropdown: true },
-    { name: "Services", href: "/#services" },
+    { name: "Solutions", href: "/#solutions", hasDropdown: true },
+    { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -103,7 +103,7 @@ export default function Navigation() {
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
                     >
-                      {productLinks.map((product) => (
+                      {products.map((product) => (
                         <Link
                           key={product.name}
                           href={product.href}
@@ -195,7 +195,7 @@ export default function Navigation() {
                         animate={{ opacity: 1, height: "auto" }}
                         className="ml-4 mt-2 flex flex-col gap-1 bg-gray-50 rounded-lg p-2"
                       >
-                        {productLinks.map((product) => (
+                        {products.map((product) => (
                           <Link
                             key={product.name}
                             href={product.href}

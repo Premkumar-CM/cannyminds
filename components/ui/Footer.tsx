@@ -8,10 +8,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const products = [
-    { name: "CannyDocs", href: "/products/document-management" },
-    { name: "CannyHR", href: "/products/hr-management" },
-    { name: "CannyScan", href: "/products/scanning-solution" },
-    { name: "CannyTrack", href: "/products/tracking-system" },
+    { name: "CannyDocs", href: "/solutions/document-management" },
+    { name: "CannyHR", href: "/solutions/hr-management" },
+    { name: "CannyScan", href: "/solutions/scanning-solution" },
+    { name: "CannyTrack", href: "/solutions/tracking-system" },
   ];
 
   const services = [
@@ -74,9 +74,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Products */}
+          {/* Solutions */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Products</h3>
+            <h3 className="text-lg font-bold mb-4">Solutions</h3>
             <ul className="space-y-2">
               {products.map((product) => (
                 <li key={product.name}>

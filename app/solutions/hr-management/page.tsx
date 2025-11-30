@@ -94,7 +94,7 @@ const jsonLd = {
       "dateModified": new Date().toISOString(),
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://cannymindstech.com/products/hr-management"
+        "@id": "https://cannymindstech.com/solutions/hr-management"
       }
     },
     {
@@ -153,12 +153,12 @@ export default function CannyHRProductPage() {
         {/* Breadcrumb */}
         <nav className="bg-gray-50 border-b border-gray-200 py-4 mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ol className="flex items-center space-x-2 text-sm">
-              <li><Link href="/" className="text-primary hover:text-primary/80">Home</Link></li>
+            <ol className="flex items-center space-x-2 text-xs sm:text-sm overflow-x-auto">
+              <li><Link href="/" className="text-primary hover:text-primary/80 whitespace-nowrap">Home</Link></li>
               <li className="text-gray-400">/</li>
-              <li><Link href="/#products" className="text-primary hover:text-primary/80">Products</Link></li>
+              <li><Link href="/#solutions" className="text-primary hover:text-primary/80 whitespace-nowrap">Solutions</Link></li>
               <li className="text-gray-400">/</li>
-              <li className="text-gray-600 font-medium">CannyHR - HR & Payroll Management Software</li>
+              <li className="text-gray-600 font-medium truncate">CannyHR - HR & Payroll Management Software</li>
             </ol>
           </div>
         </nav>
@@ -174,11 +174,11 @@ export default function CannyHRProductPage() {
                   Complete Hire-to-Retire HRMS
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
                   Transform HR Operations with <span className="text-green-600">CannyHR</span>
                 </h1>
 
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
                   Complete HR and payroll management platform covering the entire employee lifecycle—from recruitment to retirement.
                   Automate payroll, track attendance with <strong>350+ biometric devices</strong>, manage leave, and conduct performance
                   reviews. Mobile app for employees and managers.
@@ -232,7 +232,7 @@ export default function CannyHRProductPage() {
         {/* Stats Section */}
         <section className="py-12 bg-green-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-4 gap-8 text-center text-white">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center text-white">
               {[
                 { number: "10+", label: "Happy Clients" },
                 { number: "5,000+", label: "Employees Managed" },
@@ -240,8 +240,8 @@ export default function CannyHRProductPage() {
                 { number: "70%", label: "Time Saved on Claims" },
               ].map((stat, idx) => (
                 <div key={idx}>
-                  <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                  <div className="text-white/80">{stat.label}</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-sm sm:text-base text-white/80">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -886,21 +886,21 @@ export default function CannyHRProductPage() {
                   name: "CannyDocs",
                   tagline: "Document Management System",
                   description: "Complete DMS for HR documents including employee records, contracts, offer letters, and performance reviews. Automated workflows with 80% OCR accuracy.",
-                  link: "/products/document-management",
+                  link: "/solutions/document-management",
                   color: "blue",
                 },
                 {
                   name: "CannyScan",
                   tagline: "Document Scanning Services",
                   description: "Professional scanning services for digitizing employee files, historical HR records, and compliance documents. Secure, accurate, and fast digitization.",
-                  link: "/products/scanning-solution",
+                  link: "/solutions/scanning-solution",
                   color: "purple",
                 },
                 {
                   name: "CannyTrack",
                   tagline: "Productivity Monitoring",
                   description: "Workforce productivity tracking with activity monitoring, screenshots, and data loss prevention. Monitor remote employees with consent-based tracking.",
-                  link: "/products/tracking-system",
+                  link: "/solutions/tracking-system",
                   color: "orange",
                 },
               ].map((product, idx) => (
