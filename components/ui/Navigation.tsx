@@ -4,12 +4,30 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { KeyboardArrowDown } from "@mui/icons-material";
+import {
+  KeyboardArrowDown,
+  KeyboardArrowRight,
+  LocalHospital,
+  Factory,
+  AccountBalance,
+  AccountBalanceWallet,
+  Store,
+  School,
+  Description,
+  People,
+  Scanner,
+  Inventory,
+  VerifiedUser,
+  Settings
+} from "@mui/icons-material";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
+  const [mobileIndustryOpen, setMobileIndustryOpen] = useState(false);
+  const [mobileBusinessNeedOpen, setMobileBusinessNeedOpen] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
   const { scrollY } = useScroll();
 
   const backgroundColor = useTransform(
@@ -27,12 +45,62 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const products = [
-    { name: "CannyDocs - Document Management", href: "/solutions/document-management" },
-    { name: "CannyHR - HR Management", href: "/solutions/hr-management" },
-    { name: "CannyScan - Scanning Solution", href: "/solutions/scanning-solution" },
-    { name: "CannyTrack - Tracking System", href: "/solutions/tracking-system" },
+  useEffect(() => {
+    return () => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout);
+      }
+    };
+  }, [closeTimeout]);
+
+  const industries = [
+    { name: "Healthcare & Pharmaceuticals", href: "/industries/healthcare", description: "HIPAA-compliant digital solutions" },
+    { name: "Manufacturing & Engineering", href: "/industries/manufacturing", description: "Production & quality management" },
+    { name: "Banking, Finance & Insurance", href: "/industries/banking-finance", description: "Secure financial automation" },
+    { name: "Government & Public Sector", href: "/industries/government", description: "Transparent governance solutions" },
+    { name: "Retail & E-commerce", href: "/industries/retail", description: "Omnichannel retail solutions" },
+    { name: "Education & Training", href: "/industries/education", description: "Modern learning management" },
   ];
+
+  const businessNeeds = [
+    {
+      name: "Document Management & Control",
+      href: "/solutions/document-management",
+      description: "Centralize, secure & automate documents",
+      icon: Description
+    },
+    {
+      name: "HR & Workforce Automation",
+      href: "/solutions/hr-management",
+      description: "End-to-end HR, payroll & attendance",
+      icon: People
+    },
+    {
+      name: "Digital Transformation & Scanning",
+      href: "/solutions/scanning-solution",
+      description: "Go paperless with intelligent scanning",
+      icon: Scanner
+    },
+    {
+      name: "Productivity & Workforce Monitoring",
+      href: "/solutions/tracking-system",
+      description: "Track employee activity & productivity",
+      icon: People
+    },
+    {
+      name: "Compliance Management",
+      href: "/about#certifications",
+      description: "ISO & FDA certified solutions",
+      icon: VerifiedUser
+    },
+    {
+      name: "Business Process Automation",
+      href: "/services",
+      description: "Streamline workflows & operations",
+      icon: Settings
+    },
+  ];
+
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -77,8 +145,19 @@ export default function Navigation() {
                 <div
                   key={link.name}
                   className="relative"
-                  onMouseEnter={() => setProductsDropdownOpen(true)}
-                  onMouseLeave={() => setProductsDropdownOpen(false)}
+                  onMouseEnter={() => {
+                    if (closeTimeout) {
+                      clearTimeout(closeTimeout);
+                      setCloseTimeout(null);
+                    }
+                    setSolutionsDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    const timeout = setTimeout(() => {
+                      setSolutionsDropdownOpen(false);
+                    }, 300);
+                    setCloseTimeout(timeout);
+                  }}
                 >
                   <motion.a
                     href={link.href}
@@ -90,28 +169,105 @@ export default function Navigation() {
                     {link.name}
                     <KeyboardArrowDown
                       sx={{ fontSize: 20 }}
-                      className={`transition-transform ${productsDropdownOpen ? 'rotate-180' : ''}`}
+                      className={`transition-transform ${solutionsDropdownOpen ? 'rotate-180' : ''}`}
                     />
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
                   </motion.a>
 
-                  {/* Dropdown Menu */}
-                  {productsDropdownOpen && (
+                  {/* Mega Menu Dropdown */}
+                  {solutionsDropdownOpen && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                      className="fixed left-0 right-0 bg-white shadow-2xl border-t border-gray-200 p-8 z-[100]"
+                      style={{
+                        top: '80px',
+                        maxHeight: 'calc(100vh - 80px)',
+                        overflowY: 'auto'
+                      }}
+                      onMouseEnter={() => {
+                        if (closeTimeout) {
+                          clearTimeout(closeTimeout);
+                          setCloseTimeout(null);
+                        }
+                      }}
+                      onMouseLeave={() => {
+                        const timeout = setTimeout(() => {
+                          setSolutionsDropdownOpen(false);
+                        }, 300);
+                        setCloseTimeout(timeout);
+                      }}
                     >
-                      {products.map((product) => (
-                        <Link
-                          key={product.name}
-                          href={product.href}
-                          className="block px-4 py-3 text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors text-sm font-medium"
-                        >
-                          {product.name}
-                        </Link>
-                      ))}
+                      <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl">
+                        <div className="grid grid-cols-2 gap-8">
+                        {/* By Industry Column */}
+                        <div>
+                          <div className="flex items-center gap-2 mb-3 px-3">
+                            <Factory sx={{ fontSize: 20, color: '#3170b5' }} />
+                            <h3 className="text-xs font-bold text-primary uppercase tracking-wider">
+                              By Industry
+                            </h3>
+                          </div>
+                          <div className="space-y-1">
+                            {industries.map((industry) => (
+                              <Link
+                                key={industry.name}
+                                href={industry.href}
+                                className="block px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors group"
+                              >
+                                <div className="font-semibold text-gray-800 text-sm group-hover:text-primary transition-colors">
+                                  {industry.name}
+                                </div>
+                                <div className="text-xs text-gray-500 mt-0.5">
+                                  {industry.description}
+                                </div>
+                              </Link>
+                            ))}
+                            <Link
+                              href="/#solutions"
+                              className="block px-3 py-2 mt-2 text-primary font-semibold text-sm hover:bg-primary/5 rounded-lg transition-colors"
+                            >
+                              View All Industries →
+                            </Link>
+                          </div>
+                        </div>
+
+                        {/* By Business Need Column */}
+                        <div>
+                          <div className="flex items-center gap-2 mb-3 px-3">
+                            <AccountBalanceWallet sx={{ fontSize: 20, color: '#1e3a8a' }} />
+                            <h3 className="text-xs font-bold text-secondary uppercase tracking-wider">
+                              By Business Need
+                            </h3>
+                          </div>
+                          <div className="space-y-1">
+                            {businessNeeds.map((need) => {
+                              const IconComponent = need.icon;
+                              return (
+                                <Link
+                                  key={need.name}
+                                  href={need.href}
+                                  className="block px-3 py-2 rounded-lg hover:bg-secondary/5 transition-colors group"
+                                >
+                                  <div className="flex items-start gap-2">
+                                    <IconComponent sx={{ fontSize: 20, color: '#3170b5' }} className="mt-0.5" />
+                                    <div className="flex-1">
+                                      <div className="font-semibold text-gray-800 text-sm group-hover:text-secondary transition-colors">
+                                        {need.name}
+                                      </div>
+                                      <div className="text-xs text-gray-500 mt-0.5">
+                                        {need.description}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                        </div>
+                      </div>
                     </motion.div>
                   )}
                 </div>
@@ -180,34 +336,97 @@ export default function Navigation() {
                 link.hasDropdown ? (
                   <div key={link.name} className="border-b border-gray-100 pb-2">
                     <button
-                      onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                      onClick={() => setSolutionsDropdownOpen(!solutionsDropdownOpen)}
                       className="text-gray-700 hover:text-primary hover:bg-gray-50 font-medium py-3 px-4 transition-colors flex items-center justify-between w-full rounded-lg"
                     >
                       <span>{link.name}</span>
                       <KeyboardArrowDown
                         sx={{ fontSize: 20 }}
-                        className={`transition-transform ${productsDropdownOpen ? 'rotate-180' : ''}`}
+                        className={`transition-transform ${solutionsDropdownOpen ? 'rotate-180' : ''}`}
                       />
                     </button>
-                    {productsDropdownOpen && (
+
+                    {solutionsDropdownOpen && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
-                        className="ml-4 mt-2 flex flex-col gap-1 bg-gray-50 rounded-lg p-2"
+                        className="ml-4 mt-2 flex flex-col gap-2"
                       >
-                        {products.map((product) => (
-                          <Link
-                            key={product.name}
-                            href={product.href}
-                            onClick={() => {
-                              setIsMobileMenuOpen(false);
-                              setProductsDropdownOpen(false);
-                            }}
-                            className="text-gray-600 hover:text-primary hover:bg-white text-sm py-2 px-3 transition-colors rounded-md"
+                        {/* By Industry - Mobile */}
+                        <div className="bg-gray-50 rounded-lg p-2">
+                          <button
+                            onClick={() => setMobileIndustryOpen(!mobileIndustryOpen)}
+                            className="flex items-center justify-between w-full text-sm font-semibold text-primary py-2 px-2"
                           >
-                            {product.name}
-                          </Link>
-                        ))}
+                            <span className="flex items-center gap-2">
+                              <Factory sx={{ fontSize: 18 }} />
+                              By Industry
+                            </span>
+                            <KeyboardArrowDown
+                              sx={{ fontSize: 18 }}
+                              className={`transition-transform ${mobileIndustryOpen ? 'rotate-180' : ''}`}
+                            />
+                          </button>
+                          {mobileIndustryOpen && (
+                            <div className="mt-1 space-y-1">
+                              {industries.map((industry) => (
+                                <Link
+                                  key={industry.name}
+                                  href={industry.href}
+                                  onClick={() => {
+                                    setIsMobileMenuOpen(false);
+                                    setSolutionsDropdownOpen(false);
+                                    setMobileIndustryOpen(false);
+                                  }}
+                                  className="block text-gray-600 hover:text-primary hover:bg-white text-xs py-2 px-3 transition-colors rounded-md"
+                                >
+                                  {industry.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+
+                        {/* By Business Need - Mobile */}
+                        <div className="bg-gray-50 rounded-lg p-2">
+                          <button
+                            onClick={() => setMobileBusinessNeedOpen(!mobileBusinessNeedOpen)}
+                            className="flex items-center justify-between w-full text-sm font-semibold text-secondary py-2 px-2"
+                          >
+                            <span className="flex items-center gap-2">
+                              <AccountBalanceWallet sx={{ fontSize: 18 }} />
+                              By Business Need
+                            </span>
+                            <KeyboardArrowDown
+                              sx={{ fontSize: 18 }}
+                              className={`transition-transform ${mobileBusinessNeedOpen ? 'rotate-180' : ''}`}
+                            />
+                          </button>
+                          {mobileBusinessNeedOpen && (
+                            <div className="mt-1 space-y-1">
+                              {businessNeeds.map((need) => {
+                                const IconComponent = need.icon;
+                                return (
+                                  <Link
+                                    key={need.name}
+                                    href={need.href}
+                                    onClick={() => {
+                                      setIsMobileMenuOpen(false);
+                                      setSolutionsDropdownOpen(false);
+                                      setMobileBusinessNeedOpen(false);
+                                    }}
+                                    className="block text-gray-600 hover:text-secondary hover:bg-white text-xs py-2 px-3 transition-colors rounded-md"
+                                  >
+                                    <div className="flex items-center gap-2">
+                                      <IconComponent sx={{ fontSize: 16 }} />
+                                      <span>{need.name}</span>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
                       </motion.div>
                     )}
                   </div>
